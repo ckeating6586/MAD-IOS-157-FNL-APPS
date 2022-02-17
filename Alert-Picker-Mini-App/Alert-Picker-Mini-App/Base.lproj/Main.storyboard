@@ -16,10 +16,57 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Name Displays Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gL-hA-Qb2">
+                                <rect key="frame" x="106" y="138" width="192.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNK-i7-XRy">
+                                <rect key="frame" x="163" y="100" width="78.5" height="30"/>
+                                <state key="normal" title="Enter name"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Y1-Ef-ulA"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Nqk-nP-JzC">
+                                <rect key="frame" x="-4" y="312" width="413" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="dZs-0d-NXf"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="dateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="l6u-qp-XTr"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qD-fC-euy">
+                                <rect key="frame" x="179.5" y="518" width="55" height="30"/>
+                                <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="getCurrentDateTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fLQ-c0-9Hd"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="5gL-hA-Qb2" firstAttribute="top" secondItem="oNK-i7-XRy" secondAttribute="bottom" constant="8" id="4Wf-XC-frL"/>
+                            <constraint firstItem="1qD-fC-euy" firstAttribute="top" secondItem="Nqk-nP-JzC" secondAttribute="bottom" constant="44" id="5dq-Db-5pt"/>
+                            <constraint firstItem="oNK-i7-XRy" firstAttribute="centerX" secondItem="5gL-hA-Qb2" secondAttribute="centerX" id="6ZB-vB-127"/>
+                            <constraint firstItem="oNK-i7-XRy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="56" id="GvT-Yp-ZKz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1qD-fC-euy" secondAttribute="bottom" constant="265" id="LE6-2a-K0t"/>
+                            <constraint firstItem="oNK-i7-XRy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="163" id="OIe-OH-Lez"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nqk-nP-JzC" secondAttribute="trailing" constant="5" id="aGJ-Q0-nfd"/>
+                            <constraint firstItem="5gL-hA-Qb2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="106" id="iBi-dk-oQs"/>
+                            <constraint firstItem="1qD-fC-euy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jY0-Sb-rb7"/>
+                            <constraint firstItem="5gL-hA-Qb2" firstAttribute="centerX" secondItem="Nqk-nP-JzC" secondAttribute="centerX" id="qax-PP-JtG"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Check Availability" image="calendar" catalog="system" id="7eE-Hl-CEt"/>
+                    <connections>
+                        <outlet property="labelResult" destination="5gL-hA-Qb2" id="8h8-qz-4Zx"/>
+                        <outlet property="myDatePicker" destination="Nqk-nP-JzC" id="lEA-GO-342"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1136" y="-293"/>
@@ -31,8 +78,28 @@
                     <view key="view" contentMode="scaleToFill" id="Xgi-29-KqL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKG-AH-XPU">
+                                <rect key="frame" x="184" y="476" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="yFC-X7-728"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZ4-Hs-FF7">
+                                <rect key="frame" x="0.0" y="267" width="414" height="162"/>
+                            </pickerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WKK-5o-Fqx"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="FZ4-Hs-FF7" firstAttribute="top" secondItem="WKK-5o-Fqx" secondAttribute="top" constant="223" id="Ibo-oH-Era"/>
+                            <constraint firstItem="gKG-AH-XPU" firstAttribute="top" secondItem="FZ4-Hs-FF7" secondAttribute="bottom" constant="47" id="JLO-ta-oIz"/>
+                            <constraint firstItem="FZ4-Hs-FF7" firstAttribute="leading" secondItem="WKK-5o-Fqx" secondAttribute="leading" id="iFb-zE-Kyk"/>
+                            <constraint firstItem="WKK-5o-Fqx" firstAttribute="bottom" secondItem="gKG-AH-XPU" secondAttribute="bottom" constant="307" id="ptZ-Ak-gLL"/>
+                            <constraint firstItem="FZ4-Hs-FF7" firstAttribute="centerX" secondItem="gKG-AH-XPU" secondAttribute="centerX" id="xsU-7c-EQL"/>
+                            <constraint firstItem="FZ4-Hs-FF7" firstAttribute="centerX" secondItem="Xgi-29-KqL" secondAttribute="centerX" id="yw0-JA-hfT"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Book Location" image="mappin" catalog="system" id="niS-bS-nsk"/>
                 </viewController>
