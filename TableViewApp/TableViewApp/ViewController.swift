@@ -20,9 +20,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         petTable.delegate = self
         // Do any additional setup after loading the view.
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         return petArray.count
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedItem = petArray[indexPath.row]
+        let alert = UIAlertController(title: "Your Choice", message: "\(selectedItem)", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { action -> Void in})
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
         if(cell == nil) {
